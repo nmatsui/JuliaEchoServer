@@ -9,5 +9,5 @@ COPY src/* /opt/src/
 WORKDIR /opt
 
 RUN julia --project=/opt -e 'using Pkg; Pkg.instantiate()'
-ENTRYPOINT julia --project=/opt /opt/src/main.jl
+ENTRYPOINT ["julia", "--project=/opt", "/opt/src/main.jl"]
 
